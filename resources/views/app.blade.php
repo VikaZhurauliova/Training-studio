@@ -24,7 +24,7 @@
             <div class="container">
                 <!--Logo-->
                 <div id="logo">
-                    <a href="index.html">
+                    <a href="{{ route('main') }}">
                         <span class="logo-default">TRAINING</span>
                         <span class="logo-dark">TRAINING</span>
                     </a>
