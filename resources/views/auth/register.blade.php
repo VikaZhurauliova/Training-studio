@@ -10,7 +10,8 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-6 center p-40 background-white b-r-6">
-                        <form class="form-transparent-grey">
+                        <form class="form-transparent-grey" action="{{ route('auth.register')}}" method="POST">
+                            @csrf
                             <div class="row">
                                 <div class="col-lg-12">
                                     <h3>Register New Account</h3>

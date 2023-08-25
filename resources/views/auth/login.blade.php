@@ -31,7 +31,7 @@
                                 <button type="button" class="btn btn-outline btn-dark">Login</button>
                             </div>
                         </form>
-                        <p class="small">Don't have an account yet? <a href="#">Register New Account</a>
+                        <p class="small">Don't have an account yet? <a href="{{ route('auth.registerPage') }}">Register New Account</a>
                         </p>
                     </div>
                 </div>

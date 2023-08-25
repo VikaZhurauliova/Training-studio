@@ -51,22 +51,15 @@
                 <div class="col-lg-6">
                     <h3 class="text-uppercase">Address & Map</h3>
                     <div class="row">
-                        <div class="col-lg-6">
-                            <address>
-                                <strong>Polo, Inc.</strong><br>
-                                795 Folsom Ave, Suite 600<br>
-                                San Francisco, CA 94107<br>
-                                <abbr title="Phone">P:</h4> (123) 456-7890
-                            </address>
-                        </div>
-                        <div class="col-lg-6">
-                            <address>
-                                <strong>Polo Office</strong><br>
-                                795 Folsom Ave, Suite 600<br>
-                                San Francisco, CA 94107<br>
-                                <abbr title="Phone">P:</h4> (123) 456-7890
-                            </address>
-                        </div>
+                        @foreach($contacts as $contact)
+                            <div class="col-lg-6">
+                                <address>
+                                    <strong>{{$contact->name}}</strong><br>
+                                    {{$contact->address}}
+                                    <abbr title="Phone">P:</h4> {{$contact->phone}}
+                                </address>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

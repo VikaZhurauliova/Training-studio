@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('fitness_class_users', function (Blueprint $table) {
+        Schema::create('user_classes', function (Blueprint $table) {
             $table->id();
 
-            $table->unsignedBigInteger('fitness_class_id')->nullable();
-            $table->foreign('fitness_class_id')->references('id')->on('fitness_class')->cascadeOnDelete();
+            $table->unsignedBigInteger('classes_id')->nullable();
+            $table->foreign('classes_id')->references('id')->on('classes')->cascadeOnDelete();
 
             $table->unsignedBigInteger('users_id')->nullable();
             $table->foreign('users_id')->references('id')->on('users')->cascadeOnDelete();
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('fitness_class_users');
+        Schema::dropIfExists('user_classes');
     }
 };
