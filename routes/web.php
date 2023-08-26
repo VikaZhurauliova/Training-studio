@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ForgetPasswordController;
+use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\MainController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\TeamController;
@@ -51,4 +52,5 @@ Route::post('/forgot-password', [ForgetPasswordController::class, 'sendResetLink
 Route::get('/reset-password/{token}', [ForgetPasswordController::class, 'resetPasswordView'])->middleware('guest')->name('password.reset');
 Route::post('/reset-password', [ForgetPasswordController::class, 'resetPassword'])->middleware('guest')->name('password.update');
 
-
+Route::get('/google/auth/redirect/', [GoogleController::class, 'redirect'])->name('google.redirect');
+Route::get('/google/auth/callback/', [GoogleController::class, 'callback'])->name('google.callback');

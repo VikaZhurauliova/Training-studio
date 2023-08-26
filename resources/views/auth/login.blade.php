@@ -28,6 +28,8 @@
                                     </label>
                                 </div>
                             </div>
+                            <a id="btn-search" href="{{ route('google.redirect') }}"> <i class="fa-google fab"></i></a>
+                            </a>
                             <div class="col-lg-12 form-group">
                                 @foreach($errors->all() as $key => $error)
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
