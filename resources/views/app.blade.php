@@ -73,7 +73,16 @@
                                 <li><a href="{{ route('schedule') }}">Schedules</a></li>
                                 <li><a href="{{ route('team') }}">Team</a></li>
                                 <li><a href="{{ route('contacts') }}">Contacts</a></li>
-                                <button type="button" class="btn btn-outline btn-dark">Sign up</button>
+
+                                @auth
+                                    <li><a href="{{ route('account.show') }}">{{__('account')}}</a></li>
+                                    <li><a href="{{ route('auth.logout') }}">{{__('logout')}}</a></li>
+                                @endauth
+                                @guest
+                                    <li><a href="{{ route('auth.login') }}">{{__('login')}}</a></li>
+                                    <li><a href="{{ route('auth.register') }}">{{__('register')}}</a></li>
+                                @endguest
+
                             </ul>
                         </nav>
                     </div>
