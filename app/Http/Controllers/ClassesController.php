@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Classes;
 use Illuminate\Http\Request;
 
 class ClassesController extends Controller
@@ -13,10 +12,9 @@ class ClassesController extends Controller
 
         ]);
     }
-    public function training(Classes $training)
+    public function training()
     {
-        dd($training->user);
-        return view('train', [
+        return view('training', [
 
         ]);
     }

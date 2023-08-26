@@ -71,7 +71,7 @@
                                 <p class="classes-m">
                                     Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ultrices elementum odio ac tempus. Etiam eleifend orci lectus, eget venenatis ipsum commodo et.
                                 </p>
-                                <button type="button" class="btn btn-outline btn-dark">Read more</button>
+                                <a href="{{ route('classes.training', ['classes' => $classes->id]) }}">Read more</a>
                             </div>
                         </div>
                     </div>
