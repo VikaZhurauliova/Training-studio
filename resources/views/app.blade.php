@@ -75,7 +75,12 @@
                                 <li><a href="{{ route('contacts') }}">Contacts</a></li>
 
                                 @auth
-                                    <li><a href="{{ route('account.show') }}">{{__('account')}}</a></li>
+                                    <li class="dropdown"><a href="#">Account</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a href="{{ route('account.show') }}">Account Information</a></li>
+                                            <li><a href="{{ route('account.favourite') }}">Favourite classes</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a href="{{ route('auth.logout') }}">{{__('logout')}}</a></li>
                                 @endauth
                                 @guest

@@ -23,4 +23,11 @@ class AccountController extends Controller
         $accountService->updateAccount($request->validated());
         return back();
     }
+    public function favouriteClasses()
+    {
+
+        return view('auth.account-classes', [
+            'user' => Auth::user(),
+        ]);
+    }
 }

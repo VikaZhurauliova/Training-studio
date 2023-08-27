@@ -34,6 +34,7 @@ Route::group(['controller' => AuthController::class], function () {
 
 Route::group(['prefix' => '/account', 'controller' => AccountController::class, 'middleware' => 'auth'], function () {
     Route::get('/', 'account')->name('account.show');
+    Route::get('/classes', 'favouriteClasses')->name('account.favourite');
     Route::post('/', 'updateAccount')->name('account.update');
     Route::post('/changePassword', 'changePassword')->name('account.changePassword');
 });
