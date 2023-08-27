@@ -1,0 +1,44 @@
+{
+    "main_title": "Training-studio",
+    "home": "Home",
+    "about": "About",
+    "classes": "Classes",
+    "schedules": "Schedules",
+    "team": "Team",
+    "contacts": "Contacts",
+    "account": "Account",
+    "account_information": "Account information",
+    "favourite_classes": "Favourite classes",
+    "logout": "Logout",
+    "login": "Login",
+    "register": "Register",
+
+    "email": "Email",
+    "password": "Password",
+    "remember": "Remember me",
+    "click_here": "Click here",
+    "register_new_account": "Register New Account",
+    "name": "Name",
+    "password_confirmation": "Confirm password",
+    "confirmation": "Confirm",
+    "reset": "Reset",
+    "account_change_information": "Change your account information",
+
+    "banner-pre-title": "WORK HARDER, GET STRONGER",
+    "banner-title": "EASY WITH OUR GYM",
+    "banner-advice": "We can help you",
+    "banner-action": "Become a member",
+
+    "about_title": "MODERN FITNESS CENTER - IS:",
+    "about_pre_title": "Here are some reasons why you should choose us!",
+
+    "team_title": "EXPERT TRAINERS",
+    "team_pre_title": "Succeed with the best!",
+
+    "schedule_title": "CLASSES SCHEDULE",
+    "schedule_pre_title": "Choose the right time for you!"
+
+
+
+
+}

@@ -3,8 +3,8 @@
     <section>
         <div class="container">
             <div class="col-lg-12 col-md-12 m-b-40 text-center">
-                <h2>CHOOSE PROGRAM</h2>
-                <p class="lead">Training Studio is free CSS template for gyms and fitness centers. You are allowed to use this layout for your business website.</p>
+                <h2>{{__('about_title')}}</h2>
+                <p class="lead">{{__('about_pre_title')}}</p>
             </div>
             <div class="row">
                 @foreach($abouts as $about)

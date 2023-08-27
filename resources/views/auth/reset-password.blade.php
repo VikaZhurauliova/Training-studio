@@ -9,19 +9,19 @@
                         @csrf
                         <input type="hidden" name="token" value="{{ $token }}">
                         <div class="form-group">
-                            <label class="sr-only">Email</label>
-                            <input type="email" name="email" class="form-control" placeholder="Email">
+                            <label class="sr-only">{{__('email')}}</label>
+                            <input type="email" name="email" class="form-control" placeholder="{{__('email')}}">
                         </div>
                         <div class="form-group">
-                            <label class="sr-only">Password</label>
-                            <input type="password" name="password" class="form-control" placeholder="Password">
+                            <label class="sr-only">{{__('password')}}</label>
+                            <input type="password" name="password" class="form-control" placeholder="{{__('password')}}">
                         </div>
                         <div class="form-group">
-                            <label class="sr-only">Password confirmation</label>
-                            <input type="password" name="password_confirmation" class="form-control" placeholder="Password confirmation">
+                            <label class="sr-only">{{__('password_confirmation')}}</label>
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="{{__('password_confirmation')}}">
                         </div>
                         <div class="text-left form-group">
-                            <button type="submit" class="btn">Confirm</button>
+                            <button type="submit" class="btn">{{__('password_confirmation')}}Confirm</button>
                         </div>
                     </form>
                 </div>

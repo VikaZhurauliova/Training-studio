@@ -3,8 +3,8 @@
     <section id="page-content">
         <div class="container">
             <div class="heading-text heading-section text-center">
-                <h2>EXPERT TRAINERS</h2>
-                <span>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</span>
+                <h2>{{__('team_title')}}</h2>
+                <span>{{__('team_pre_title')}}</span>
             </div>
             <div class="row team-members m-b-40 justify-center">
                 @foreach($teams as $team)

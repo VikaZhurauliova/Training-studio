@@ -6,8 +6,8 @@
                 <div class="content col-lg-9">
                     <div class="card">
                         <div class="card-header">
-                            <span class="h4">Profile</span>
-                            <p class="text-muted">Change your account information</p>
+                            <span class="h4">{{__('account')}}</span>
+                            <p class="text-muted">{{__('account_change_information')}}</p>
                         </div>
                         <div class="card-body">
                             <form action="{{ route('account.update') }}" method="POST">
@@ -15,7 +15,7 @@
                                 <div class="tabs">
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tabProfile" role="tab" aria-controls="home" aria-selected="true">Profile</a>
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tabProfile" role="tab" aria-controls="home" aria-selected="true">{{__('account')}}</a>
                                         </li>
                                         <li class="nav-item">
                                             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#tabBilling" role="tab" aria-controls="contact" aria-selected="false">Billing Information</a>

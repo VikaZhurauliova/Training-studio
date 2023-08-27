@@ -8,11 +8,11 @@
                     <form action="{{ route('password.email')  }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label class="sr-only">Email</label>
-                            <input type="email" name="email" class="form-control" placeholder="Email">
+                            <label class="sr-only">{{__('email')}}</label>
+                            <input type="email" name="email" class="form-control" placeholder="{{__('email')}}">
                         </div>
                         <div class="text-left form-group">
-                            <button type="submit" class="btn">Reset</button>
+                            <button type="submit" class="btn">{{__('reset')}}</button>
                         </div>
                     </form>
                 </div>

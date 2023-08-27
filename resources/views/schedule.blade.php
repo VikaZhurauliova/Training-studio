@@ -3,12 +3,12 @@
     <section id="page-title" data-bg-parallax="{{asset('images/schedule-bg.jpg')}}">
         <div class="container">
             <div class="page-title">
-                <h1>CLASSES SCHEDULE</h1>
-                <span>Nunc urna sem, laoreet ut metus id, aliquet consequat magna. Sed viverra ipsum dolor, ultricies fermentum massa consequat eu.</span>
+                <h1>{{__('schedule_title')}}</h1>
+                <span>{{__('schedule_pre_title')}}</span>
             </div>
             <div class="breadcrumb">
                 <ul>
-                    <li><a href="{{ route('main') }}">Home</a></li>
+                    <li><a href="{{ route('main') }}">{{__('home')}}</a></li>
                 </ul>
             </div>
         </div>

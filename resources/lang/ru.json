@@ -1,0 +1,42 @@
+{
+    "main_title": "Тренинг-студия",
+    "home": "Главная",
+    "about": "О нас",
+    "classes": "Тренировки",
+    "schedules": "Расписание",
+    "team": "Команда",
+    "contacts": "Контакты",
+    "account": "Акккаунт",
+    "account_information": "Информация",
+    "favourite_classes": "Избранное",
+    "logout": "Выйти",
+    "login": "Войти",
+    "register": "Регистрация",
+
+    "email": "Еmail",
+    "password": "Пароль",
+    "remember": "Запомнить",
+    "click_here": "Нажми сюда",
+    "register_new_account": "Регистрация",
+    "name": "Имя",
+    "password_confirmation": "Подтвердите пароль",
+    "confirmation": "Подтвердить",
+    "reset": "Сбросить",
+    "account_change_information": "Изменить информацию",
+
+    "banner-pre-title": "РАБОТАЙТЕ УСИЛЕННЕЕ, СТАНОВИСЬ СИЛЬНЕЕ",
+    "banner-title": "ЛЕГКО С НАШИМ ТРЕНАЖЕРНЫМ ЗАЛОМ",
+    "banner-advice": "Мы можем тебе помочь",
+    "banner-action": "Присоединиться",
+
+    "about_title": "СОВРЕМЕННЫЙ ФИТНЕС-ЦЕНТР —ЭТО:",
+    "about_pre_title": "Вот несколько причин почему стоит выбрать нас!",
+
+    "team_title": "Экспертные тренера",
+    "team_pre_title": "Добивайся успеха с лучшими!",
+
+    "schedule_title": "РАСПИСАНИЕ ЗАНЯТИЙ",
+    "schedule_pre_title": "Выбери подходящее для тебя время!"
+
+
+}

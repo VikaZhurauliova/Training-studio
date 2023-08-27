@@ -14,6 +14,9 @@ use App\Http\Controllers\VerificationController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'main'])->name('main');
+
+Route::get('/changeLang', [MainController::class, 'changeLang'])->name('changeLang');
+
 Route::get('/about', [AboutController::class, 'about'])->name('about');
 
 Route::get('/schedule', [ScheduleController   ::class, 'schedule'])->name('schedule');
