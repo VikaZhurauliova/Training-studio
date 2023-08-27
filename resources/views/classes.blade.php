@@ -38,7 +38,6 @@
                             <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
                         </div>
                         <div class="tab-content" id="myTabContent4">
-                            @foreach($classes as $class)
                             <div class="tab-pane fade show active" id="home4" role="tabpanel" aria-labelledby="home-tab">
                                 <img src="{{asset('/images/training-image-02.jpg')}}">
                                 <p class="classes-m">
@@ -72,9 +71,8 @@
                                 <p class="classes-m">
                                     Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aenean ultrices elementum odio ac tempus. Etiam eleifend orci lectus, eget venenatis ipsum commodo et.
                                 </p>
-                                <a href="{{ route('classes.training', ['classes' => $class->id]) }}">Read more</a>
+                                <a href="{{ route('classes.training', ['classes' => $classes->id]) }}">Read more</a>
                             </div>
-                            @endforeach
                         </div>
                     </div>
                 </div>

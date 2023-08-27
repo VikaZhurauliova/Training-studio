@@ -40,7 +40,7 @@ class SuccessfulRegistration extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'email.successful_registration',
+            view: 'mail.successful_registration',
             with: [
                 'user' => $this->user
             ]

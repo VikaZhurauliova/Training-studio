@@ -82,12 +82,16 @@
                                 <li><a href="{{ route('contacts') }}">{{__('contacts')}}</a></li>
 
                                 @auth
+<<<<<<< HEAD
                                     <li class="dropdown"><a href="#">{{__('account')}}</a>
                                         <ul class="dropdown-menu">
                                             <li><a href="{{ route('account.show') }}">{{__('account_information')}}</a></li>
                                             <li><a href="{{ route('account.favourite') }}">{{__('favourite_classes')}}</a></li>
                                         </ul>
                                     </li>
+=======
+                                    <li><a href="{{ route('account.show') }}">{{__('account')}}</a></li>
+>>>>>>> parent of 179b940 (Fix)
                                     <li><a href="{{ route('auth.logout') }}">{{__('logout')}}</a></li>
                                 @endauth
                                 @guest
