@@ -23,7 +23,8 @@ Route::get('/schedule', [ScheduleController   ::class, 'schedule'])->name('sched
 Route::get('/team', [TeamController   ::class, 'team'])->name('team');
 
 
-Route::get('/contacts', [ContactController   ::class, 'contacts'])->name('contacts');
+Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
+Route::post('/contacts', [ContactController::class, 'sendFeedback'])->name('contacts.feedback');
 
 Route::group(['controller' => AuthController::class], function () {
     Route::get('/login', 'getLoginPage')->name('auth.loginPage');
