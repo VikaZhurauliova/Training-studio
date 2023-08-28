@@ -17,7 +17,11 @@ Route::get('/', [MainController::class, 'main'])->name('main');
 
 Route::get('/changeLang', [MainController::class, 'changeLang'])->name('changeLang');
 
-Route::get('/about', [AboutController::class, 'about'])->name('about');
+Route::group(['controller' => AboutController::class], function () {
+    Route::get('/about', 'about')->name('about');
+    Route::get('/about-blog', 'aboutBlog')->name('about.blog');
+});
+
 
 Route::get('/schedule', [ScheduleController   ::class, 'schedule'])->name('schedule');
 Route::get('/team', [TeamController   ::class, 'team'])->name('team');
@@ -38,13 +42,15 @@ Route::group(['controller' => AuthController::class], function () {
 
 Route::group(['prefix' => '/account', 'controller' => AccountController::class, 'middleware' => 'auth'], function () {
     Route::get('/', 'account')->name('account.show');
+    Route::get('/classes', 'favouriteClasses')->name('account.favourite');
+
     Route::post('/', 'updateAccount')->name('account.update');
     Route::post('/changePassword', 'changePassword')->name('account.changePassword');
 });
 
 Route::group(['prefix' => '/classes', 'controller' => ClassesController::class], function () {
     Route::get('/', 'classes')->name('classes');
-    Route::get('/{training}', 'training')->name('classes.training');
+    Route::get('/{class}', 'training')->name('classes.training');
 });
 
 Route::get('/email/verify', [VerificationController::class, 'view'])->middleware('auth')->name('verification.notice');

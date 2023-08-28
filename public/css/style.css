@@ -18471,3 +18471,9 @@ body[data-bg-image] {
 .justify-center {
     justify-content: center;
 }
+.wrap-classes-img {
+    margin-bottom: 15px;
+}
+.classes-img {
+    max-width: 100%;
+}

@@ -15,7 +15,6 @@
                             </div>
                             <h3>{{$about->name}}</h3>
                             <p>{{$about->description}}</p>
-                            <a href="#"><p>DISCOVER MORE</p></a>
                         </div>
                     </div>
                 @endforeach
