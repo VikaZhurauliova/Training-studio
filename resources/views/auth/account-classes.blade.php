@@ -1,94 +1,53 @@
 @extends('app')
 @section('content')
-    <section>
-        <div class="container">
-            <div class="row mb-5">
-                <div class="col-lg-6">
-                    <h3>Contextual classes</h3>
-                    <ul class="list-group">
-                        <li class="list-group-item">Dapibus ac facilisis in</li>
-                        <li class="list-group-item list-group-item-primary">This is a primary list group item</li>
-                        <li class="list-group-item list-group-item-secondary">This is a secondary list group item</li>
-                        <li class="list-group-item list-group-item-success">This is a success list group item</li>
-                        <li class="list-group-item list-group-item-danger">This is a danger list group item</li>
-                        <li class="list-group-item list-group-item-warning">This is a warning list group item</li>
-                        <li class="list-group-item list-group-item-info">This is a info list group item</li>
-                        <li class="list-group-item list-group-item-light">This is a light list group item</li>
-                        <li class="list-group-item list-group-item-dark">This is a dark list group item</li>
-                    </ul>
+    @if(count($user->wishlist) == 0)
+        <section>
+            <div class="container">
+                <div class=" mb-5">
+                    <div class="col-lg-6">
+                        <h3>Your Wishlist is currently empty.</h3>
+                    </div>
+                    <div class="favourite-btn">
+                        <a class="btn icon-left" href="{{ route('classes') }}"><span>Return To Classes</span></a>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <section id="page-content">
+        </section>
+    @else
+    <section id="shop-wishlist">
         <div class="container">
-            <div class="row">
-                <div class="content col-lg-9">
-                    <h4>Favourite classes</h4>
+            <div class="shop-cart">
+                <div class="table table-sm table-striped table-responsive">
                     <table class="table">
                         <thead>
                         <tr>
-                            <th scope="col">Class</th>
-                            <th scope="col">Heading</th>
-                            <th scope="col">Heading</th>
+                            <th class="cart-product-name">Class</th>
+                            <th class="cart-product-price">Description</th>
+                            <th class="cart-product-remove"></th>
                         </tr>
                         </thead>
                         <tbody>
-                        <tr class="table-active">
-                            <th scope="row">Active</th>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Default</th>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                        </tr>
-                        <tr class="table-primary">
-                            <th scope="row">Primary</th>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                        </tr>
-                        <tr class="table-secondary">
-                            <th scope="row">Secondary</th>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                        </tr>
-                        <tr class="table-success">
-                            <th scope="row">Success</th>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                        </tr>
-                        <tr class="table-danger">
-                            <th scope="row">Danger</th>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                        </tr>
-                        <tr class="table-warning">
-                            <th scope="row">Warning</th>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                        </tr>
-                        <tr class="table-info">
-                            <th scope="row">Info</th>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                        </tr>
-                        <tr class="table-light">
-                            <th scope="row">Light</th>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                        </tr>
-                        <tr class="table-dark">
-                            <th scope="row">Dark</th>
-                            <td>Cell</td>
-                            <td>Cell</td>
-                        </tr>
+                        @foreach($user->wishlist as $class)
+                            <tr>
+                                <td class="cart-product-thumbnail">
+                                    <div class="cart-product-thumbnail-name">{{ $class->name }}</div>
+                                </td>
+                                <td class="cart-product-description">
+                                    <p>{{ $class->description }}</p>
+                                </td>
+                                <td class="cart-product-remove">
+                                    <form action="{{ route('account.favourite.delete', ['classes' => $class->id]) }}" method="POST">
+                                        @csrf
+                                        <a href="#" onclick="this.parentNode.submit()"><i class="fa fa-times"></i></a>
+                                    </form>
+                                </td>
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </section>
+    @endif
 @endsection
-

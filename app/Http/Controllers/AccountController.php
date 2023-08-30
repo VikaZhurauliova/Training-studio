@@ -17,13 +17,6 @@ class AccountController extends Controller
             'user' => Auth::user(),
         ]);
     }
-    public function favouriteClasses()
-    {
-
-        return view('auth.account-classes', [
-            'user' => Auth::user(),
-        ]);
-    }
 
     public function updateAccount(AccountRequest $request, AccountService $accountService): RedirectResponse
     {

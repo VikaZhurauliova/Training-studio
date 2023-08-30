@@ -25,12 +25,12 @@ class Classes extends Model
 
     public function user(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'users');
+        return $this->belongsToMany(User::class, 'user_classes','classes_id', 'users_id');
     }
 
-    public function reviews(): HasMany
-    {
-        return $this->hasMany(ClassReview::class);
-    }
+//    public function reviews(): HasMany
+//    {
+//        return $this->hasMany(ClassReview::class);
+//    }
 
 }

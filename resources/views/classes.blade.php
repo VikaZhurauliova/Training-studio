@@ -18,9 +18,18 @@
                         <div class="div wrap-classes-img">
                             <img src="{{$class->image}}" class="classes-img">
                         </div>
-
                         <p class="classes-m">{{$class->description}}</p>
-                        <a href="{{ route('classes.training', ['class' => $class->id]) }}">Read more</a>
+                        <div class="d-flex justify-content-between">
+                            <a href="{{ route('classes.training', ['classes' => $class->id]) }}">Read more</a>
+                            <span class="product-wishlist">
+                                <form action="{{ route('account.favourite.add', ['classes' => $class->id]) }}"
+                                      method="POST">
+                                    @csrf
+                                    <a href="#" onclick="this.parentNode.submit()"><i
+                                            class="fa fa-heart"></i></a>
+                                </form>
+                        </span>
+                        </div>
 
                     </div>
                 </div>

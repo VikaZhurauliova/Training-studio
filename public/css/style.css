@@ -18477,3 +18477,7 @@ body[data-bg-image] {
 .classes-img {
     max-width: 100%;
 }
+
+.favourite-btn {
+    margin: 20px;
+}

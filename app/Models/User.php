@@ -50,4 +50,9 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
     {
         return $this->hasOne(UserInformation::class);
     }
+
+    public function wishlist()
+    {
+        return $this->belongsToMany(Classes::class, 'user_classes', 'users_id', 'classes_id')->withTimestamps();
+    }
 }

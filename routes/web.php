@@ -13,7 +13,7 @@ use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\VerificationController;
-
+use App\Http\Controllers\WishClassesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'main'])->name('main');
@@ -49,7 +49,6 @@ Route::group(['controller' => AuthController::class], function () {
 
 Route::group(['prefix' => '/account', 'controller' => AccountController::class, 'middleware' => 'auth'], function () {
     Route::get('/', 'account')->name('account.show');
-    Route::get('/classes', 'favouriteClasses')->name('account.favourite');
 
     Route::post('/', 'updateAccount')->name('account.update');
     Route::post('/changePassword', 'changePassword')->name('account.changePassword');
@@ -57,7 +56,7 @@ Route::group(['prefix' => '/account', 'controller' => AccountController::class, 
 
 Route::group(['prefix' => '/classes', 'controller' => ClassesController::class], function () {
     Route::get('/', 'classes')->name('classes');
-    Route::get('/{class}', 'training')->name('classes.training');
+    Route::get('/{classes}', 'training')->name('classes.training');
 });
 
 Route::get('/email/verify', [VerificationController::class, 'view'])->middleware('auth')->name('verification.notice');
@@ -71,3 +70,9 @@ Route::post('/reset-password', [ForgetPasswordController::class, 'resetPassword'
 
 Route::get('/google/auth/redirect/', [GoogleController::class, 'redirect'])->name('google.redirect');
 Route::get('/google/auth/callback/', [GoogleController::class, 'callback'])->name('google.callback');
+
+Route::group(['prefix' => '/favourite-classes', 'controller' => WishClassesController::class, 'middleware' => 'auth'], function () {
+    Route::get('/', 'favouriteClasses')->name('account.favourite');
+    Route::post('/{classes}/delete', 'delete')->name('account.favourite.delete');
+    Route::post('/{classes}/add', 'add')->name('account.favourite.add');
+});
