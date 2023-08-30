@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\About;
 use App\Models\Blog;
+use App\Models\Subscription;
 use Illuminate\Http\Request;
 
 class AboutController extends Controller
@@ -24,4 +25,5 @@ class AboutController extends Controller
 
         ]);
     }
+
 }

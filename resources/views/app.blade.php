@@ -79,7 +79,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a href="{{ route('about') }}">Why us</a></li>
                                         <li><a href="{{ route('about.blog') }}">News</a></li>
-                                        <li><a href="#">Subscriptions</a></li>
+                                        <li><a href="{{ route('about.subscription') }}">Subscriptions</a></li>
                                     </ul>
                                 </li>
                                 <li><a href="{{ route('classes') }}">{{__('classes')}}</a></li>

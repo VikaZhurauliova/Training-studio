@@ -8,9 +8,12 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ScheduleController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\VerificationController;
+
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'main'])->name('main');
@@ -20,12 +23,16 @@ Route::get('/changeLang', [MainController::class, 'changeLang'])->name('changeLa
 Route::group(['controller' => AboutController::class], function () {
     Route::get('/about', 'about')->name('about');
     Route::get('/about-blog', 'aboutBlog')->name('about.blog');
+
 });
 
+Route::get('/subscription', [SubscriptionController::class, 'subscription'])->name('about.subscription');
+
+Route::get('/subscription/{subscription}/payment/redirect', [PaymentController::class, 'redirect'])->name('payment.redirect');
+Route::get('/subscription/payment/{hash}', [PaymentController::class, 'callback'])->name('payment.callback');
 
 Route::get('/schedule', [ScheduleController   ::class, 'schedule'])->name('schedule');
 Route::get('/team', [TeamController   ::class, 'team'])->name('team');
-
 
 Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
 Route::post('/contacts', [ContactController::class, 'sendFeedback'])->name('contacts.feedback');
