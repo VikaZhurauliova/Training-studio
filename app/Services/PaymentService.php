@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Services;
+namespace App\Services;
 
 use App\Models\Subscription;
 use Stripe\StripeClient;
@@ -35,12 +35,12 @@ class PaymentService
                 'product_data' => [
                     'name' => $subscription->name,
                     'description' => $subscription->description,
-                    'price' => $subscription->price,
                 ],
                 'unit_amount' =>  $subscription->price * 100,
             ],
             'quantity' => 2,
         ];
+
         return $items;
     }
 

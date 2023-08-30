@@ -38,8 +38,8 @@ class AuthController extends Controller
             'email' => $validated['email'],
             'password' => $validated['password']
         ], $validated['remember'] == 'on')) {
-
             $request->session()->regenerate();
+
             return redirect()->route('main');
         }
 

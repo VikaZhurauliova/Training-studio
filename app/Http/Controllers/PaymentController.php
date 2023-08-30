@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Services\PaymentService;
 use App\Models\Payment;
 use App\Models\Subscription;
-use Illuminate\Http\Request;
+use App\Services\PaymentService;
 use Illuminate\Support\Str;
 
 class PaymentController extends Controller

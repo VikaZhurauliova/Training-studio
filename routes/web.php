@@ -17,7 +17,6 @@ use App\Http\Controllers\WishClassesController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', [MainController::class, 'main'])->name('main');
-
 Route::get('/changeLang', [MainController::class, 'changeLang'])->name('changeLang');
 
 Route::group(['controller' => AboutController::class], function () {

@@ -20,56 +20,64 @@
                                         <li class="nav-item">
                                             <a class="nav-link" id="contact-tab" data-toggle="tab" href="#tabBilling" role="tab" aria-controls="contact" aria-selected="false">Billing Information</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tabPassword" role="tab" aria-controls="profile" aria-selected="false">Password</a>
-                                        </li>
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
                                         <div class="tab-pane fade show active" id="tabProfile" role="tabpanel" aria-labelledby="tab-profile">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="firstName">First Name</label>
+                                                    <label for="first_name">First name</label>
                                                     <input
                                                         type="text"
                                                         class="form-control"
                                                         name="first_name"
-                                                        placeholder="Enter your Name"
-                                                        required
-                                                        value="{{ $user->information?->first_name }}">
+                                                        value="{{ $user->information?->first_name }}"
+                                                        placeholder="Enter your first name">
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="surname">Last Name</label>
+                                                    <label for="last_name">Last name</label>
                                                     <input
                                                         type="text"
                                                         class="form-control"
                                                         name="last_name"
-                                                        placeholder="Enter your Surname"
-                                                        required
-                                                        value="{{ $user->information?->last_name }}">
+                                                        value="{{ $user->information?->last_name }}"
+                                                        placeholder="Enter your last name">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
+                                                    <label for="gender">Date of Birth</label>
+                                                    <input
+                                                        class="form-control"
+                                                        type="date"
+                                                        value="{{ $user->information?->birthday }}"
+                                                        name="birthday">
+                                                </div>
+                                                <div class="form-group col-md-6">
                                                     <label for="sex">Gender</label>
-                                                    <select class="form-control" name="sex" required>
+                                                    <select class="form-control" name="sex">
                                                         <option value="">Select your gender</option>
-                                                        <option>Female</option>
-                                                        <option>Male</option>
-                                                        <option>Rather not say</option>
+                                                        <option value="female">Female</option>
+                                                        <option value="male">Male</option>
                                                     </select>
                                                 </div>
                                             </div>
-
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="telephone">Telephone</label>
+                                                    <label for="phone">Telephone</label>
                                                     <input
                                                         class="form-control"
                                                         type="tel"
+                                                        value="{{ $user->information?->phone }}"
                                                         name="phone"
-                                                        placeholder="Enter your Telephone number"
-                                                        required
-                                                        value="{{ $user->information?->phone }}">
+                                                        placeholder="Enter your phone number">
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="description">About me</label>
+                                                    <textarea name="description" class="form-control" placeholder="About me" rows="9" cols="50">
+                                                    {{ $user->information?->description }}
+                                                </textarea>
                                                 </div>
                                             </div>
                                         </div>
@@ -108,6 +116,29 @@
                                 <div class="mt-4">
                                     <button type="submit" class="btn btn-sm">Save changes</button>
                                 </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <div class="card-header">
+                            <h5 class="card-title">Update password</h5>
+                        </div>
+                        <div class="card-body">
+                            <form method="POST" action="{{ route('account.changePassword') }}">
+                                @csrf
+                                <div class="form-group">
+                                    <label class="form-label">Old password</label>
+                                    <input type="password" class="form-control" name="old_password" placeholder="Old password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">New password</label>
+                                    <input type="password" class="form-control" name="new_password" placeholder="New password">
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-label">New password confirm</label>
+                                    <input type="password" class="form-control" name="new_password_confirmation" placeholder="New password confirmation">
+                                </div>
+                                <button type="submit" class="btn btn-primary">Submit</button>
                             </form>
                         </div>
                     </div>

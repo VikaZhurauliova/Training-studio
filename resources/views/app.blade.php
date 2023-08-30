@@ -120,7 +120,7 @@
                         <!-- Footer widget area 1 -->
                         <div class="widget  widget-contact-us"
                              style="background-image: url('{{asset('images/world-map-dark.png')}}'); background-position: 50% 20px; background-repeat: no-repeat">
-                            <h4>About POLO</h4>
+                            <h4>Training Studio</h4>
                             <ul class="list-icon">
                                 <li><i class="fa fa-map-marker-alt"></i> 795 Folsom Ave, Suite 600 <br>
                                     San Francisco, CA 94107
@@ -140,11 +140,9 @@
                         <div class="widget">
                             <h4>PROJECT</h4>
                             <ul class="list">
-                                <li><a href="#">Latest Release</a></li>
-                                <li><a href="#">Updates</a></li>
-                                <li><a href="#">License</a></li>
-                                <li><a href="#">News</a></li>
-                                <li><a href="#">Links</a></li>
+                                <li><a href="{{ route('about.blog') }}">News</a></li>
+                                <li><a href="{{route('schedule')}}">Schedule</a></li>
+                                <li><a href={{route('team')}}#">Team</a></li>
                             </ul>
                         </div>
                         <!-- end: Footer widget area 1 -->
@@ -154,41 +152,53 @@
                         <div class="widget">
                             <h4>SUPPORT</h4>
                             <ul class="list">
-                                <li><a href="#">Troubleshooting</a></li>
-                                <li><a href="#">Common Questions</a></li>
-                                <li><a href="#">Report a Bug</a></li>
-                                <li><a href="#">Get Help</a></li>
+                                <li><a href="{{route('contacts')}}">Get Help</a></li>
                                 <li><a href="#">FAQS</a></li>
                             </ul>
                         </div>
                         <!-- end: Footer widget area 2 -->
                     </div>
                     <div class="col-lg-4">
-                        <form class="widget-contact-form" novalidate action="include/contact-form.php" role="form"
-                              method="post">
+                        <form  enctype="multipart/form-data" action="{{ route('contacts.feedback') }}" method="POST">
+                            @csrf
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
                                 </div>
-                                <input type="text" aria-required="true" name="widget-contact-form-name"
-                                       class="form-control required name" placeholder="Enter your Name">
+                                <input
+                                    type="text"
+                                    aria-required="true"
+                                    name="name"
+                                    class="form-control required name"
+                                    placeholder="Enter your Name"
+                                    value="{{ old('name') }}"
+                                >
                             </div>
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1"><i
-                                            class="fa fa-envelope"></i></span>
+                                    <span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
                                 </div>
-                                <input type="email" aria-required="true" required name="widget-contact-form-email"
-                                       class="form-control required email" placeholder="Enter your Email">
+                                <input
+                                    type="email"
+                                    aria-required="true"
+                                    required
+                                    name="email"
+                                    class="form-control required email"
+                                    placeholder="Enter your Email"
+                                    value="{{ old('name') }}"
+                                >
                             </div>
                             <div class="form-group mb-2">
-                                <textarea type="text" name="widget-contact-form-message" rows="5"
-                                          class="form-control required" placeholder="Enter your Message"></textarea>
+                                <textarea
+                                    type="text"
+                                    name="message"
+                                    rows="5"
+                                    class="form-control required"
+                                    placeholder="Enter your Message"
+                                ></textarea>
                             </div>
                             <div class="form-group">
-                                <button class="btn" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send
-                                    message
-                                </button>
+                                <button class="btn" type="submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
                             </div>
                         </form>
                     </div>

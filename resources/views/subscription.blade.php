@@ -19,7 +19,7 @@
                                 <li>{{$subscription->description}}</li>
                             </ul>
                             <div class="plan-button">
-                                <a href="#" class="btn btn-light">Buy Now</a>
+                                <a href="{{ route('payment.redirect', ['subscription' => $subscription->id]) }}" class="btn btn-light">Buy Now</a>
                             </div>
                         </div>
                     </div>
