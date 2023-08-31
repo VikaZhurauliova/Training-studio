@@ -21,7 +21,7 @@ Route::get('/changeLang', [MainController::class, 'changeLang'])->name('changeLa
 
 Route::group(['controller' => AboutController::class], function () {
     Route::get('/about', 'about')->name('about');
-    Route::get('/about-blog', 'aboutBlog')->name('about.blog');
+    Route::get('/php', 'aboutBlog')->name('about.blog');
 
 });
 

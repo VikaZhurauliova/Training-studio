@@ -11,7 +11,7 @@
                     <div class="col-lg-3">
                         <div class="team-member">
                             <div class="team-image">
-                                <img src="{{$team->image}}">
+                                <img src="/storage/{{$team->image}}">
                             </div>
                             <div class="team-desc">
                                 <h3>{{$team->name}}</h3>

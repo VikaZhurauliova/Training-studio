@@ -16,7 +16,7 @@
                     <div class="post-item-wrap">
                         <div class="post-image">
                             <a href="#">
-                                <img alt="" src="{{$blog->image}}">
+                                <img alt="" src="/storage/{{$blog->image}}">
                             </a>
                         </div>
                         <div class="post-item-description">

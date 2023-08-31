@@ -22,7 +22,7 @@ class ForgetPasswordService
         $user = User::query()->where('email', $email)->first();
 
         if (!$user) {
-            throw new Exception('User not found exception');
+            throw new Exception('Count not found exception');
         }
 
         $record = DB::table('password_reset_tokens')->where('email', $email)->first();
@@ -52,7 +52,7 @@ class ForgetPasswordService
         $user = User::query()->where('email', $email)->first();
 
         if (!$user) {
-            throw new Exception('User not found exception');
+            throw new Exception('Count not found exception');
         }
 
         $record = DB::table('password_reset_tokens')->where('email', $email)->first();
