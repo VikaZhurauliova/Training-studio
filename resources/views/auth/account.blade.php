@@ -127,10 +127,6 @@
                             <form method="POST" action="{{ route('account.changePassword') }}">
                                 @csrf
                                 <div class="form-group">
-                                    <label class="form-label">Old password</label>
-                                    <input type="password" class="form-control" name="old_password" placeholder="Old password">
-                                </div>
-                                <div class="form-group">
                                     <label class="form-label">New password</label>
                                     <input type="password" class="form-control" name="new_password" placeholder="New password">
                                 </div>

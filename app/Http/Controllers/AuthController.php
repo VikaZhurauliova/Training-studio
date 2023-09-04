@@ -31,7 +31,6 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request)
     {
-
         $validated = $request->validated();
 
         if (Auth::attempt([
@@ -63,6 +62,7 @@ class AuthController extends Controller
         event(new Registered($user));
 
         Auth::login($user);
+        session()->flash('success', 'You have successfully registered');
         return redirect()->route('main');
     }
 

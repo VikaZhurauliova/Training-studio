@@ -8,6 +8,7 @@ use App\Http\Requests\ChangePasswordRequest;
 use App\Services\AccountService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AccountController extends Controller
 {
@@ -22,13 +23,21 @@ class AccountController extends Controller
     public function updateAccount(AccountRequest $request, AccountService $accountService): RedirectResponse
     {
         $accountService->updateAccount($request->validated());
+        session()->flash('success', 'Account has been successfully update.');
         return back();
     }
 
     public function changePassword(ChangePasswordRequest $request)
     {
+        $request->validated();
+        $user = $request->user();
+        if($user->password == $request->old_password) {
+            $user->password = Hash::make($request->new_password);
+            $user->save();
+            ChangePassword::dispatch($request->user());
+        }
 
-        ChangePassword::dispatch($request->user());
+
         return redirect()->back();
     }
 

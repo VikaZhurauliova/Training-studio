@@ -27,4 +27,12 @@ class LoginRequest extends FormRequest
             'remember' => ''
         ];
     }
+
+    protected function prepareForValidation()
+    {
+        $this->merge([
+            'remember' => $validated['remember'] ?? 'off',
+        ]);
+
+    }
 }

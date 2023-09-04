@@ -29,4 +29,14 @@ class ContactRequest extends FormRequest
             'file' => 'mimes:jpg,png,jpeg,xls,csv'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'name.max' => 'The name must be maximum 55 characters',
+            'email.max' => 'The email must be maximum 55 characters',
+            'message.max' => 'Message must be maximum 255 characters'
+        ];
+
+    }
 }

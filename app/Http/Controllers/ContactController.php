@@ -44,7 +44,7 @@ class ContactController extends Controller
             'message' => $validated['message'],
             'file_id' => isset($file) ? $file->id : null
         ]);
-
+        session()->flash('success', 'Information has been successfully sent.');
         return redirect()->back();
     }
 }

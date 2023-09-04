@@ -33,4 +33,17 @@ class AccountRequest extends FormRequest
             'timezone' => 'nullable|min:2',
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'first_name.min' => 'The name must be minimum 2 characters',
+            'last_name.min' => 'The name must be minimum 2 characters',
+            'sex.min' => 'The name must be minimum 2 characters',
+            'phone.min' => 'The phone must be minimum 7 characters',
+            'country.min' => 'The phone must be minimum 7 characters',
+            'city.min' => 'The phone must be minimum 7 characters',
+            'timezone.min' => 'The phone must be minimum 7 characters'
+        ];
+    }
 }
