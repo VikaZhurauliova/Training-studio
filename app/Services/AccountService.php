@@ -30,6 +30,7 @@ class AccountService
                 $user->information()->update($prepareData);
             }
         };
+
         return $user;
 
     }

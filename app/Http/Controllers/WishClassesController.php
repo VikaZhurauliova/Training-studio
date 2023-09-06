@@ -10,7 +10,6 @@ class WishClassesController extends Controller
 {
     public function favouriteClasses()
     {
-
         return view('auth.account-classes', [
             'user' => Auth::user(),
         ]);
@@ -21,15 +20,16 @@ class WishClassesController extends Controller
         $user = Auth::user();
         $user->wishlist()->attach($classes);
 
+        session()->flash('success', 'Classes added to favourites.');
         return redirect()->back();
     }
 
     public function delete(Classes $classes)
     {
         $user = Auth::user();
-
         $user->wishlist()->detach($classes);
 
+        session()->flash('success', 'Classes removed from favourites.');
         return redirect()->back();
     }
 }

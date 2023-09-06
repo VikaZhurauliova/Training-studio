@@ -8,6 +8,7 @@
         padding: 40px 0;
         background: #EBF0F5;
     }
+
     h1 {
         color: #88B04B;
         font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
@@ -15,18 +16,21 @@
         font-size: 40px;
         margin-bottom: 10px;
     }
+
     p {
         color: #404F5E;
         font-family: "Nunito Sans", "Helvetica Neue", sans-serif;
-        font-size:20px;
+        font-size: 20px;
         margin: 0;
     }
+
     i {
         color: #9ABC66;
         font-size: 100px;
         line-height: 200px;
-        margin-left:-15px;
+        margin-left: -15px;
     }
+
     .card {
         background: white;
         padding: 60px;

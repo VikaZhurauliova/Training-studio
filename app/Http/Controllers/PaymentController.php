@@ -14,8 +14,8 @@ class PaymentController extends Controller
         $this->paymentService = $paymentService;
     }
 
-    public function redirect(Subscription $subscription) {
-
+    public function redirect(Subscription $subscription)
+    {
         $paymentHash = Str::random(40);
         $session = $this->paymentService->createPayment($subscription, $paymentHash);
         Payment::query()->create([

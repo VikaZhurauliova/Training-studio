@@ -12,17 +12,19 @@ class AboutController extends Controller
     public function about()
     {
         $abouts = About::all();
+
         return view('about', [
             'abouts' => $abouts
         ]);
     }
 
-    public function aboutBlog() {
+    public function aboutBlog()
+    {
+
         $blogs = Blog::all();
 
         return view('about_blog', [
             'blogs' => $blogs,
-
         ]);
     }
 

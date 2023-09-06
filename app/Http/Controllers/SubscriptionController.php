@@ -10,12 +10,12 @@ use Stripe\StripeClient;
 
 class SubscriptionController extends Controller
 {
-    public function subscription() {
+    public function subscription()
+    {
         $subscriptions = Subscription::all();
 
         return view('subscription', [
             'subscriptions' => $subscriptions
-
         ]);
     }
 

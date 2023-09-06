@@ -41,5 +41,5 @@
                 @endforeach
             </div>
         </div>
-    </section> <!-- end: Content -->
+    </section>
 @endsection

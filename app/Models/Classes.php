@@ -10,6 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class Classes extends Model
 {
     use HasFactory;
+    protected $table = 'classes';
+
     protected $fillable = [
 
         'name',
@@ -23,14 +25,23 @@ class Classes extends Model
         return $this->belongsToMany(Team::class, 'teams');
     }
 
-    public function user(): BelongsToMany
+
+    public function reviews(): HasMany
     {
-        return $this->belongsToMany(User::class, 'user_classes','classes_id', 'users_id');
+        return $this->hasMany(ClassReview::class);
     }
 
-//    public function reviews(): HasMany
-//    {
-//        return $this->hasMany(ClassReview::class);
-//    }
+    public function averageReviews(): float
+    {
+        $reviews = $this->reviews;
+        $averageStar = 0;
+
+        /** @var ClassReview $review */
+        foreach ($reviews as $review) {
+            $averageStar += $review->star_count;
+        }
+
+        return (count($reviews) == 0) ? 0 : round($averageStar / count($reviews));
+    }
 
 }

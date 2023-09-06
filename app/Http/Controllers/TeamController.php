@@ -10,6 +10,7 @@ class TeamController extends Controller
     public function team()
     {
         $teams = Team::all();
+
         return view('team', [
             'teams' => $teams
         ]);

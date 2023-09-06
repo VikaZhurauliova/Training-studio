@@ -17,7 +17,6 @@ class GoogleController extends Controller
     public function callback(AuthService $authService)
     {
         $googleUser = Socialite::driver('google')->user();
-
         $user = $authService->getInternalUser($googleUser, 'google');
         $authService->googleUpdateAdditionalUserInformation($googleUser, $user);
         Auth::login($user);

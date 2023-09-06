@@ -47,6 +47,7 @@ class AuthController extends Controller
         ]);
 
     }
+
     public function register(RegisterRequest $request)
     {
         $validated = $request->validated();
@@ -58,18 +59,19 @@ class AuthController extends Controller
         ]);
 
         Mail::to($user)->send(new SuccessfulRegistration($user));
-
         event(new Registered($user));
-
         Auth::login($user);
+
         session()->flash('success', 'You have successfully registered');
         return redirect()->route('main');
     }
 
-    public function logout(Request $request) {
+    public function logout(Request $request)
+    {
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
+
         return redirect()->route('main');
     }
 }

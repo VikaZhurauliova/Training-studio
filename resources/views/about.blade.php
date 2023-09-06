@@ -26,7 +26,8 @@
         <div class="container">
             <div class="page-title">
                 <h1 class="text-uppercase text-medium">DON’T THINK, BEGIN TODAY!</h1>
-                <span>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula, sit amet dapibus odio augue eget libero. Morbi tempus mauris a nisi luctus imperdiet.</span>
+                <span>Ut consectetur, metus sit amet aliquet placerat, enim est ultricies ligula, sit amet
+                    dapibus odio augue eget libero. Morbi tempus mauris a nisi luctus imperdiet.</span>
                 <button type="button" class="btn btn-light btn-about">Become a member</button>
             </div>
         </div>

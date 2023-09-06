@@ -19,12 +19,14 @@
                             </div>
                             <div class="form-group m-b-5">
                                 <label class="sr-only">{{__('password')}}</label>
-                                <input type="password" class="form-control" name="password" placeholder="{{__('password')}}">
+                                <input type="password" class="form-control" name="password"
+                                       placeholder="{{__('password')}}">
                             </div>
                             <div class="form-group form-inline text-left">
                                 <div class="form-check">
                                     <label>
-                                        <input type="checkbox" name="remember"><small class="m-l-10">{{__('remember')}}</small>
+                                        <input type="checkbox" name="remember"><small
+                                            class="m-l-10">{{__('remember')}}</small>
                                     </label>
                                 </div>
                             </div>
@@ -34,7 +36,8 @@
                                 @foreach($errors->all() as $key => $error)
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         {{$error}}
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span></button>
                                     </div>
                                 @endforeach
                             </div>
@@ -42,8 +45,10 @@
                                 <button type="submit" class="btn btn-outline btn-dark">{{__('login')}}</button>
                             </div>
                         </form>
-                        <p class="small">Forget password? <a href="{{ route('password.request') }}">{{__('click_here')}}</a></p>
-                        <p class="small">Don't have an account yet? <a href="{{ route('auth.registerPage') }}">{{__('register_new_account')}}</a>
+                        <p class="small">Forget password? <a
+                                href="{{ route('password.request') }}">{{__('click_here')}}</a></p>
+                        <p class="small">Don't have an account yet? <a
+                                href="{{ route('auth.registerPage') }}">{{__('register_new_account')}}</a>
                         </p>
                     </div>
                 </div>

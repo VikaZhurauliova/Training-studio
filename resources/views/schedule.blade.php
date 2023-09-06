@@ -43,12 +43,12 @@
                             <td></td>
                             <td></td>
                             <td></td>
-                            <td>10:00AM - 11:30AM	</td>
+                            <td>10:00AM - 11:30AM</td>
                         </tr>
                         <tr>
                             <td>Body Building</td>
-                            <td>2:00PM - 3:30PM	</td>
-                            <td>10:00AM - 11:30AM	</td>
+                            <td>2:00PM - 3:30PM</td>
+                            <td>10:00AM - 11:30AM</td>
                             <td></td>
                             <td>2:00PM - 3:30PM</td>
                             <td></td>
@@ -59,14 +59,14 @@
                             <td></td>
                             <td>10:00AM - 11:30AM</td>
                             <td></td>
-                            <td>2:00PM - 3:30PM	</td>
+                            <td>2:00PM - 3:30PM</td>
                         </tr>
                         <tr>
                             <td>Advanced Training</td>
                             <td></td>
                             <td>2:00PM - 3:30PM</td>
                             <td>2:00PM - 3:30PM</td>
-                            <td>10:00AM - 11:30AM	</td>
+                            <td>10:00AM - 11:30AM</td>
                             <td></td>
                         </tr>
                         </tbody>

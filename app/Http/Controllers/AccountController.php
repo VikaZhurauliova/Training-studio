@@ -14,7 +14,6 @@ class AccountController extends Controller
 {
     public function account()
     {
-
         return view('auth.account', [
             'user' => Auth::user(),
         ]);
@@ -24,6 +23,7 @@ class AccountController extends Controller
     {
         $accountService->updateAccount($request->validated());
         session()->flash('success', 'Account has been successfully update.');
+
         return back();
     }
 
@@ -31,12 +31,12 @@ class AccountController extends Controller
     {
         $request->validated();
         $user = $request->user();
-        if($user->password == $request->old_password) {
+
+        if ($user->password == $request->old_password) {
             $user->password = Hash::make($request->new_password);
             $user->save();
             ChangePassword::dispatch($request->user());
         }
-
 
         return redirect()->back();
     }

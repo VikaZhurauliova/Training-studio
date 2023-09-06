@@ -15,14 +15,19 @@
                                 <div class="tabs">
                                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                                         <li class="nav-item">
-                                            <a class="nav-link active" id="home-tab" data-toggle="tab" href="#tabProfile" role="tab" aria-controls="home" aria-selected="true">{{__('account')}}</a>
+                                            <a class="nav-link active" id="home-tab" data-toggle="tab"
+                                               href="#tabProfile" role="tab" aria-controls="home"
+                                               aria-selected="true">{{__('account')}}</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#tabBilling" role="tab" aria-controls="contact" aria-selected="false">Billing Information</a>
+                                            <a class="nav-link" id="contact-tab" data-toggle="tab" href="#tabBilling"
+                                               role="tab" aria-controls="contact" aria-selected="false">Billing
+                                                Information</a>
                                         </li>
                                     </ul>
                                     <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="tabProfile" role="tabpanel" aria-labelledby="tab-profile">
+                                        <div class="tab-pane fade show active" id="tabProfile" role="tabpanel"
+                                             aria-labelledby="tab-profile">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="first_name">First name</label>
@@ -75,13 +80,15 @@
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="description">About me</label>
-                                                    <textarea name="description" class="form-control" placeholder="About me" rows="9" cols="50">
+                                                    <textarea name="description" class="form-control"
+                                                              placeholder="About me" rows="9" cols="50">
                                                     {{ $user->information?->description }}
                                                 </textarea>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="tab-pane fade" id="tabBilling" role="tabpanel" aria-labelledby="tab-billing">
+                                        <div class="tab-pane fade" id="tabBilling" role="tabpanel"
+                                             aria-labelledby="tab-billing">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="address">Country</label>
@@ -101,7 +108,8 @@
                                                         name="city"
                                                         placeholder="Enter your Apartment, studio, or floor"
                                                         required
-                                                        value="{{ $user->information?->city }}">
+                                                        value="{{ $user->information?->city }}"
+                                                    >
                                                 </div>
                                             </div>
                                         </div>
@@ -110,7 +118,9 @@
                                 @foreach($errors->all() as $key => $error)
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         {{$error}}
-                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                            <span aria-hidden="true">×</span>
+                                        </button>
                                     </div>
                                 @endforeach
                                 <div class="mt-4">
@@ -128,11 +138,14 @@
                                 @csrf
                                 <div class="form-group">
                                     <label class="form-label">New password</label>
-                                    <input type="password" class="form-control" name="new_password" placeholder="New password">
+                                    <input type="password" class="form-control" name="new_password"
+                                           placeholder="New password">
                                 </div>
                                 <div class="form-group">
                                     <label class="form-label">New password confirm</label>
-                                    <input type="password" class="form-control" name="new_password_confirmation" placeholder="New password confirmation">
+                                    <input type="password" class="form-control" name="new_password_confirmation"
+                                           placeholder="New password confirmation"
+                                    >
                                 </div>
                                 <button type="submit" class="btn btn-primary">Submit</button>
                             </form>

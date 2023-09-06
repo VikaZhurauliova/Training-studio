@@ -8,12 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class File extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'name',
         'type'
     ];
-
     public function feedback()
     {
         return $this->belongsTo(Feedback::class);

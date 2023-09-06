@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use mysql_xdevapi\Table;
 
 class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
 {
@@ -24,7 +25,10 @@ class User extends Authenticatable implements MustVerifyEmail, CanResetPassword
         'name',
         'email',
         'password',
+        'email_verified_at',
     ];
+    protected $table = 'users';
+
 
     /**
      * The attributes that should be hidden for serialization.

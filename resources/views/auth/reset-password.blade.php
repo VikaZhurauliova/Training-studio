@@ -14,11 +14,13 @@
                         </div>
                         <div class="form-group">
                             <label class="sr-only">{{__('password')}}</label>
-                            <input type="password" name="password" class="form-control" placeholder="{{__('password')}}">
+                            <input type="password" name="password" class="form-control"
+                                   placeholder="{{__('password')}}">
                         </div>
                         <div class="form-group">
                             <label class="sr-only">{{__('password_confirmation')}}</label>
-                            <input type="password" name="password_confirmation" class="form-control" placeholder="{{__('password_confirmation')}}">
+                            <input type="password" name="password_confirmation" class="form-control"
+                                   placeholder="{{__('password_confirmation')}}">
                         </div>
                         <div class="text-left form-group">
                             <button type="submit" class="btn">{{__('password_confirmation')}}Confirm</button>

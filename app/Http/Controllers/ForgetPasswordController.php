@@ -19,11 +19,12 @@ class ForgetPasswordController extends Controller
     {
         return view('auth.forgot-password');
     }
+
     public function sendResetLink(Request $request)
     {
         $request->validate(['email' => 'required|email']);
-
         $this->forgetPasswordService->sendResetPasswordLink($request->input('email'));
+
         return redirect()->back()->with('success', 'Link send successfully');
     }
 
@@ -36,9 +37,9 @@ class ForgetPasswordController extends Controller
 
     public function resetPassword(ResetPasswordRequest $request)
     {
-
         $validated = $request->validated();
         $this->forgetPasswordService->resetPassword($validated['email'], $validated['token'], $validated['password']);
+
         return redirect()->back()->with('success', 'Password successfully updated');
     }
 }

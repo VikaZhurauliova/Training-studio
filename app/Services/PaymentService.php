@@ -10,9 +10,7 @@ class PaymentService
     private StripeClient $stripe;
     public function __construct()
     {
-
         $this->stripe = new StripeClient(config('services.stripe.secret_key'));
-
     }
 
     public function createPayment(Subscription $subscription, string $paymentHash)
@@ -45,6 +43,7 @@ class PaymentService
     }
 
     public function getPayment(string $id) {
+
         return $this->stripe->checkout->sessions->retrieve(
             $id
         );
