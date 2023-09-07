@@ -29,50 +29,66 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Fitness Class</td>
-                            <td>10:00AM - 11:30AM</td>
-                            <td>2:00PM - 3:30PM</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Muscle Training</td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td>10:00AM - 11:30AM</td>
-                        </tr>
-                        <tr>
-                            <td>Body Building</td>
-                            <td>2:00PM - 3:30PM</td>
-                            <td>10:00AM - 11:30AM</td>
-                            <td></td>
-                            <td>2:00PM - 3:30PM</td>
-                            <td></td>
-                        </tr>
-                        <tr>
-                            <td>Yoga Training Class</td>
-                            <td></td>
-                            <td></td>
-                            <td>10:00AM - 11:30AM</td>
-                            <td></td>
-                            <td>2:00PM - 3:30PM</td>
-                        </tr>
-                        <tr>
-                            <td>Advanced Training</td>
-                            <td></td>
-                            <td>2:00PM - 3:30PM</td>
-                            <td>2:00PM - 3:30PM</td>
-                            <td>10:00AM - 11:30AM</td>
-                            <td></td>
-                        </tr>
+                        @foreach ($trainings as $training)
+                            <tr>
+                                <td><strong>{{$training->name}}</strong></td>
+                                @foreach ($training->slots as $slot)
+                                    <td>
+                                    Time:{{ $slot->time }}<br>
+                                    Trainer:{{ $slot->team?->name }}<br>
+                                    @if ($slot->remaining_spots > 0)
+                                        Remaining Spots: {{ $slot->remaining_spots }}<br>
+                                        <form action="/schedule/book" method="POST">
+                                            @csrf
+                                            <input type="hidden" name="training_id" value="{{ $training->id }}">
+                                            <input type="hidden" name="slot_id" value="{{ $slot->id }}">
+                                            <button  class="btn btn-dark btn-xs" type="submit">Book</button>
+                                        </form>
+                                    @else
+                                        <strong>No spots available</strong>
+                                    @endif
+                                </td>
+                                @endforeach
+                            </tr>
+                        @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
         </div>
     </section>
+    <div class="container">
+        <div class="row">
+            <div class="content col-lg-9">
+                <h2>Your Bookings</h2>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Day</th>
+                        <th>Time</th>
+                        <th>Training</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    @foreach ($bookings as $booking)
+                    <tbody>
+                    <tr class="table-success">
+                        <td>{{ $booking->slot->day }}</td>
+                        <td>{{ $booking->slot->time }}</td>
+                        <td>{{ $booking->classes->name }}</td>
+                        <td>
+                            <form action="/schedule/delete" method="POST">
+                                @csrf
+                                <input type="hidden" name="booking_id" value="{{ $booking->id }}">
+                                <button type="submit" class="btn btn-dark btn-xs">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    </tbody>
+                    @endforeach
+                </table>
+            </div>
+        </div>
+    </div>
 @endsection
+

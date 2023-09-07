@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\Category;
 use App\Models\Classes;
 use App\Models\Team;
 use Illuminate\Http\Request;
@@ -29,5 +30,13 @@ class ClassesController extends Controller
             'recentPost' => $recentPost
         ]);
     }
+    public function category(Category $category)
+    {
+        $products = $category->orderBy('created_at')->paginate(12);
 
+        return view('category', [
+            'category' => $category,
+            'products' => $products
+        ]);
+    }
 }

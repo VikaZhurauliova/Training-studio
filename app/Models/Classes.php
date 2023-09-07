@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
@@ -19,12 +20,6 @@ class Classes extends Model
         'is_active',
         'image'
     ];
-
-    public function team(): BelongsToMany
-    {
-        return $this->belongsToMany(Team::class, 'teams');
-    }
-
 
     public function reviews(): HasMany
     {
@@ -42,6 +37,11 @@ class Classes extends Model
         }
 
         return (count($reviews) == 0) ? 0 : round($averageStar / count($reviews));
+    }
+
+    public function slots()
+    {
+        return $this->hasMany(Slot::class);
     }
 
 }

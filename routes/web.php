@@ -30,7 +30,12 @@ Route::get('/subscription', [SubscriptionController::class, 'subscription'])->na
 Route::get('/subscription/{subscription}/payment/redirect', [PaymentController::class, 'redirect'])->name('payment.redirect');
 Route::get('/subscription/payment/{hash}', [PaymentController::class, 'callback'])->name('payment.callback');
 
-Route::get('/schedule', [ScheduleController   ::class, 'schedule'])->name('schedule');
+Route::group(['controller' => ScheduleController::class], function () {
+    Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
+    Route::post('/schedule/book', [ScheduleController::class, 'book']);
+    Route::post('/schedule/delete', [ScheduleController::class, 'delete']);
+});
+
 Route::get('/team', [TeamController   ::class, 'team'])->name('team');
 
 Route::get('/contacts', [ContactController::class, 'contacts'])->name('contacts');
