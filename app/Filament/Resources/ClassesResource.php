@@ -29,6 +29,7 @@ class ClassesResource extends Resource
             ->schema([
                 TextInput::make('name')->required(),
                 TextInput::make('description')->required(),
+                TextInput::make('long_description')->required(),
                 TextInput::make('image')->required(),
 
             ]);
@@ -40,6 +41,7 @@ class ClassesResource extends Resource
             ->columns([
                 TextColumn::make('name'),
                 TextColumn::make('description'),
+                TextColumn::make('long_description'),
                 TextColumn::make('image'),
             ])
             ->filters([

@@ -25,10 +25,16 @@ class ScheduleController extends Controller
         return view('schedule', compact('trainings', 'bookings'));
     }
 
-    public function book(Request $request)
+    public function book(Request $request, $id)
     {
         $slot = Slot::find($request->input('slot_id'));
 
+        $slotAdded = Slot::find($id);
+
+        if ($slotAdded) {
+            $slotAdded->is_added = true;
+            $slotAdded->save();
+        }
         if ($slot->remaining_spots > 0) {
             $booking = new Booking();
             $booking->classes_id = $request->input('training_id');
@@ -47,9 +53,10 @@ class ScheduleController extends Controller
     {
         $booking = Booking::find($request->input('booking_id'));
         $slot = $booking->slot;
-
         $booking->delete();
         $slot->increment('remaining_spots');
+        $slot->is_added = false;
+        $slot->save();
 
         return redirect('/schedule')->with('success', 'Training deleted successfully.');
     }

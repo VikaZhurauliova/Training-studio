@@ -11,8 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('bookings', function (Blueprint $table) {
-            $table->boolean('is_added')->default(1)->nullable();
+        Schema::table('classes', function (Blueprint $table) {
+            $table->text('long_description');
         });
     }
 
@@ -21,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('bookings', function (Blueprint $table) {
+        Schema::table('classes', function (Blueprint $table) {
             //
         });
     }

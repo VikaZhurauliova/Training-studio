@@ -31,9 +31,9 @@ Route::get('/subscription/{subscription}/payment/redirect', [PaymentController::
 Route::get('/subscription/payment/{hash}', [PaymentController::class, 'callback'])->name('payment.callback');
 
 Route::group(['controller' => ScheduleController::class], function () {
-    Route::get('/schedule', [ScheduleController::class, 'index'])->name('schedule');
-    Route::post('/schedule/book', [ScheduleController::class, 'book']);
-    Route::post('/schedule/delete', [ScheduleController::class, 'delete']);
+    Route::get('/schedule','index')->name('schedule');
+    Route::post('/schedule/{id}/book', 'book')->name('schedule.book');
+    Route::post('/schedule/delete', 'delete')->name('schedule.delete');
 });
 
 Route::get('/team', [TeamController   ::class, 'team'])->name('team');
@@ -67,10 +67,12 @@ Route::get('/email/verify', [VerificationController::class, 'view'])->middleware
 Route::get('/email/verify/{id}/{hash}', [VerificationController::class, 'handle'])->middleware(['auth', 'signed'])->name('verification.verify');
 Route::post('/email/verification-notification', [VerificationController::class, 'send'])->middleware(['auth', 'throttle:6,1'])->name('verification.send');
 
-Route::get('/forget-password', [ForgetPasswordController::class, 'forgotPasswordView'])->middleware('guest')->name('password.request');
-Route::post('/forgot-password', [ForgetPasswordController::class, 'sendResetLink'])->middleware('guest')->name('password.email');
-Route::get('/reset-password/{token}', [ForgetPasswordController::class, 'resetPasswordView'])->middleware('guest')->name('password.reset');
-Route::post('/reset-password', [ForgetPasswordController::class, 'resetPassword'])->middleware('guest')->name('password.update');
+Route::group(['controller' => ForgetPasswordController::class, 'middleware' => 'guest'], function () {
+    Route::get('/forget-password','forgotPasswordView')->name('password.request');
+    Route::post('/forgot-password','sendResetLink')->name('password.email');
+    Route::get('/reset-password/{token}','resetPasswordView')->name('password.reset');
+    Route::post('/reset-password','resetPassword')->name('password.update');
+});
 
 Route::get('/google/auth/redirect/', [GoogleController::class, 'redirect'])->name('google.redirect');
 Route::get('/google/auth/callback/', [GoogleController::class, 'callback'])->name('google.callback');

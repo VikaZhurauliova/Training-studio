@@ -25,7 +25,7 @@ class ForgetPasswordController extends Controller
         $request->validate(['email' => 'required|email']);
         $this->forgetPasswordService->sendResetPasswordLink($request->input('email'));
 
-        return redirect()->back()->with('success', 'Link send successfully');
+        return redirect()->route('auth.loginPage')->with('success', 'Link send successfully');
     }
 
     public function resetPasswordView(string $token)

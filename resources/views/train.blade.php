@@ -54,7 +54,9 @@
                                     </div>
                                     <div class="seperator m-b-10"></div>
                                     <p>{{$classes->description}}</p>
-                                    <div class="seperator m-t-20 m-b-10"></div>
+                                    <div class="seperator m-t-20 m-b-10">
+                                        <p>{{$classes->long_description}}</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -64,7 +66,9 @@
                             <!-- Comment -->
                             <div class="comment" id="comment-1">
                                 @foreach($classes->reviews as $review)
-                                    <div class="image"><img alt="" src="images/blog/author.jpg" class="avatar"></div>
+                                    <div class="image">
+                                        <img alt="" src="{{asset('images/user-photo')}}" class="avatar">
+                                    </div>
                                     <div class="text">
                                         <div class="product-rate">
                                             @for ($i = 0; $i < $review->star_count; $i++)

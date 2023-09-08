@@ -207,6 +207,7 @@
         <span data-notify="icon"></span> <span data-notify="title">{{ session('error') }}</span>
     </div>
 @endif
+
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/plugins.js')}}"></script>
 <script src="{{asset('js/functions.js')}}"></script>

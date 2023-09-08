@@ -30,13 +30,4 @@ class ClassesController extends Controller
             'recentPost' => $recentPost
         ]);
     }
-    public function category(Category $category)
-    {
-        $products = $category->orderBy('created_at')->paginate(12);
-
-        return view('category', [
-            'category' => $category,
-            'products' => $products
-        ]);
-    }
 }

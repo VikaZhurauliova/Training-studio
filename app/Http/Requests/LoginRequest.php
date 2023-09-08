@@ -33,6 +33,5 @@ class LoginRequest extends FormRequest
         $this->merge([
             'remember' => $validated['remember'] ?? 'off',
         ]);
-
     }
 }
