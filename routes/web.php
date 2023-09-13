@@ -9,6 +9,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ForgetPasswordController;
 use App\Http\Controllers\GoogleController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\NutritionDiaryController;
 use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ScheduleController;
 use App\Http\Controllers\SubscriptionController;
@@ -91,3 +92,11 @@ Route::group(['controller' => BoxController::class,  'middleware' => 'auth'], fu
     Route::post('/boxes/delete', 'delete')->name('boxes.delete');
 });
 
+Route::group(['prefix' => '/nutrition-diary', 'controller' => NutritionDiaryController::class], function () {
+    Route::get('/', [NutritionDiaryController::class, 'index'])->name('nutrition-diary');
+    Route::post('/', [NutritionDiaryController::class, 'store'])->name('nutrition-diary.store');
+    Route::get('/create', [NutritionDiaryController::class, 'create'])->name('nutrition-diary.create');
+    Route::get('/{id}/edit', [NutritionDiaryController::class, 'edit'])->name('nutrition-diary.edit');
+    Route::post('/{id}', [NutritionDiaryController::class, 'update'])->name('nutrition-diary.update');
+    Route::delete('/{id}', [NutritionDiaryController::class, 'delete'])->name('nutrition-diary.delete');
+});

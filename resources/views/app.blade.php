@@ -87,6 +87,9 @@
                                             <li>
                                                 <a href="{{ route('boxes') }}">Boxes</a>
                                             </li>
+                                            <li>
+                                                <a href="{{ route('nutrition-diary') }}">Nutrition Diary</a>
+                                            </li>
                                         </ul>
                                     </li>
                                     <li><a href="{{ route('auth.logout') }}">{{__('logout')}}</a></li>
