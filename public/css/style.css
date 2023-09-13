@@ -18496,3 +18496,18 @@ th, td {
 .btn-displayed {
     cursor: default!important;
 }
+
+.boxes {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.boxes-wrap {
+    padding: 0;
+    margin-right: 5px;
+    margin-top: 5px;
+    height: 100%;
+}
+.text-box-wrap {
+    height: 100%!important;
+}

@@ -78,10 +78,14 @@
                                 @auth
                                     <li class="dropdown"><a href="#">{{__('account')}}</a>
                                         <ul class="dropdown-menu">
-                                            <li><a href="{{ route('account.show') }}">{{__('account_information')}}</a>
+                                            <li>
+                                                <a href="{{ route('account.show') }}">{{__('account_information')}}</a>
                                             </li>
                                             <li>
                                                 <a href="{{ route('account.favourite') }}">{{__('favourite_classes')}}</a>
+                                            </li>
+                                            <li>
+                                                <a href="{{ route('boxes') }}">Boxes</a>
                                             </li>
                                         </ul>
                                     </li>

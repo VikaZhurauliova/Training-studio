@@ -10,13 +10,6 @@ use Illuminate\Support\Facades\DB;
 
 class ScheduleController extends Controller
 {
-//    public function schedule()
-//    {
-//        return view('schedule', [
-//
-//        ]);
-//    }
-
     public function index()
     {
         $trainings = Classes::with('slots')->get();

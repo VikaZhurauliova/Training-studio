@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BoxController;
 use App\Http\Controllers\ClassesController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ForgetPasswordController;
@@ -82,3 +83,11 @@ Route::group(['prefix' => '/favourite-classes', 'controller' => WishClassesContr
     Route::post('/{classes}/delete', 'delete')->name('account.favourite.delete');
     Route::post('/{classes}/add', 'add')->name('account.favourite.add');
 });
+
+
+Route::group(['controller' => BoxController::class,  'middleware' => 'auth'], function () {
+    Route::get('/boxes','index')->name('boxes');
+    Route::post('/boxes/{id}/book', 'book')->name('boxes.book');
+    Route::post('/boxes/delete', 'delete')->name('boxes.delete');
+});
+
